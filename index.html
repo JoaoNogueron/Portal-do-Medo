@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal do Medo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Portal do Medo</h1>
+        <nav aria-label="Menu principal do site">
+            <ul>
+                <li><a href="#introducao">🎥 Introdução</a></li>
+                <li><a href="#historias-assustadoras">📖 Histórias</a></li>
+                <li><a href="#contar-historia">📝 Conte Sua História</a></li>
+                <li><a href="#contato">📞 Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="introducao">
+            <h2>Introdução ao Portal</h2>
+            <figure>
+                <video id="introVideo" src="videos/intro.mp4" autoplay loop playsinline controls>
+                    <p>Seu navegador não suporta o elemento de vídeo.</p>
+                </video>
+                <figcaption>Assista à introdução arrepiante do Portal do Medo.</figcaption>
+            </figure>
+        </section>
+
+        <button id="toggleBackgroundMusicButton" class="music-control-button music-off">
+            <i class="fas fa-music"></i> Ligar Música de Fundo
+        </button>
+
+        <section id="historias-assustadoras">
+            <h2>Histórias Assustadoras</h2>
+            <div id="historias-container">
+                <article class="historia-card" data-historia="ultimaLigacao">
+                    <i class="fas fa-phone-slash icone-terror" aria-hidden="true"></i>
+                    <h3>A Última Ligação</h3>
+                    <button class="ler-mais">Ler História</button>
+                </article>
+
+                <article class="historia-card" data-historia="corredorInfinito">
+                    <i class="fas fa-door-open icone-terror" aria-hidden="true"></i>
+                    <h3>Corredor Infinito</h3>
+                    <button class="ler-mais">Ler História</button>
+                </article>
+
+                <article class="historia-card" data-historia="sombraEspelho">
+                    <i class="fas fa-mirror icone-terror" aria-hidden="true"></i>
+                    <h3>A Sombra do Espelho</h3>
+                    <button class="ler-mais">Ler História</button>
+                </article>
+
+                <article class="historia-card" data-historia="cancoaOco">
+                    <i class="fas fa-mouth-open icone-terror" aria-hidden="true"></i>
+                    <h3>A Canção do Sussurro Oco</h3>
+                    <button class="ler-mais">Ler História</button>
+                </article>
+
+                <article class="historia-card" data-historia="espelhoVisita">
+                    <i class="fas fa-mirror icone-terror" aria-hidden="true"></i>
+                    <h3>O Espelho da Última Visita</h3>
+                    <button class="ler-mais">Ler História</button>
+                </article>
+
+                <article class="historia-card" data-historia="gritosFloresta">
+                    <i class="fas fa-tree icone-terror" aria-hidden="true"></i>
+                    <h3>Os Gritos da Floresta Silenciosa</h3>
+                    <button class="ler-mais">Ler História</button>
+                </article>
+
+                <article class="historia-card" data-historia="bonecaPisca">
+                    <i class="fas fa-doll icone-terror" aria-hidden="true"></i>
+                    <h3>A Boneca que Nunca Pisca</h3>
+                    <button class="ler-mais">Ler História</button>
+                </article>
+
+                <article class="historia-card" data-historia="relogioParado">
+                    <i class="fas fa-clock icone-terror" aria-hidden="true"></i>
+                    <h3>O Relógio Parado da Meia-Noite</h3>
+                    <button class="ler-mais">Ler História</button>
+                </article>
+
+                <article class="historia-card" data-historia="cheiroDoce">
+                    <i class="fas fa-flower-wilted icone-terror" aria-hidden="true"></i>
+                    <h3>O Cheiro Doce da Decomposição</h3>
+                    <button class="ler-mais">Ler História</button>
+                </article>
+
+                <article class="historia-card" data-historia="chavePorao">
+                    <i class="fas fa-key icone-terror" aria-hidden="true"></i>
+                    <h3>A Chave Esquecida do Porão</h3>
+                    <button class="ler-mais">Ler História</button>
+                </article>
+            </div>
+        </section>
+
+        <section id="contar-historia">
+            <h2>Conte Sua História Assustadora</h2>
+            <p>Tem uma história real ou inventada que te faz arrepiar? Compartilhe-a conosco e ajude a expandir o Portal do Medo!</p>
+            <form id="story-form" class="contact-form">
+                <div class="form-group">
+                    <label for="story-title">Título da História:</label>
+                    <input type="text" id="story-title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="story-author">Seu Nome/Apelido (opcional):</label>
+                    <input type="text" id="story-author" name="author">
+                </div>
+                <div class="form-group">
+                    <label for="story-text">Sua História:</label>
+                    <textarea id="story-text" name="text" rows="10" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Enviar Minha História</button>
+            </form>
+            <p id="story-message" style="color: #00ff00; margin-top: 15px; font-weight: bold;"></p>
+        </section>
+        <section id="contato">
+            <h2>Entre em Contato</h2>
+            <p>Se você tem alguma sugestão ou apenas quer dizer "Olá", use o formulário abaixo ou envie um e-mail!</p>
+            <form action="#" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="nome">Seu Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Seu Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Sua Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Enviar Mensagem</button>
+            </form>
+            <p class="contact-info">Você também pode me encontrar aqui:</p>
+            <ul class="social-links">
+                <li><a href="https://linkedin.com/in/joaonogueron" target="_blank" aria-label="LinkedIn de João Nogueron"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                <li><a href="https://github.com/joaonogueron" target="_blank" aria-label="GitHub de João Nogueron"><i class="fab fa-github"></i> GitHub</a></li>
+                <li><a href="mailto:joao_nogueron@hotmail.com" aria-label="Email de João Nogueron"><i class="fas fa-envelope"></i> joao_nogueron@hotmail.com</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <div id="modal-historia" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+        <div class="modal-content">
+            <span class="close-button" role="button" aria-label="Fechar história">&times;</span>
+            <h2 id="modal-titulo"></h2>
+            <p id="modal-texto"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Desenvolvido por João Nogueron &copy; 2025</p>
+        <p>Email: <a href="mailto:joao_nogueron@hotmail.com">joao_nogueron@hotmail.com</a></p>
+    </footer>
+
+    <audio id="backgroundMusic" src="sounds/trilha.mp4" loop></audio>
+    <audio id="clickSound" src="sounds/clique-sombrio.mp3" preload="auto"></audio> <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+    
+    <script>
+      // SUAS CREDENCIAIS DE CONFIGURAÇÃO DO FIREBASE (OBTIDAS DO CONSOLE DO FIREBASE!)
+      const firebaseConfig = {
+        apiKey: "AIzaSyBN0ZMCsK1Yab0emK0ShuwS-qRbndBUx4o",
+        authDomain: "portaldomedo-ddfe6.firebaseapp.com",
+        projectId: "portaldomedo-ddfe6",
+        storageBucket: "portaldomedo-ddfe6.firebasestorage.app",
+        messagingSenderId: "53257426034",
+        appId: "1:53257426034:web:0b979c3a2ee8c89db91eeb"
+      };
+
+      // Inicializa o Firebase
+      const app = firebase.initializeApp(firebaseConfig);
+      
+      // Obtém uma referência ao serviço Firestore do Firebase e armazena em 'db'
+      const db = firebase.firestore(); 
+    </script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

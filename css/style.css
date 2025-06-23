@@ -1,0 +1,527 @@
+/* Importação da fonte Creepster do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+/* Reset básico para remover margens e preenchimentos padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #eee; /* Cor de texto clara para contraste */
+    background-color: #1a1a1a; /* Fundo escuro */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evita rolagem horizontal */
+}
+
+/* Estilo para a fonte Creepster nos títulos principais */
+h1, h2 {
+    font-family: 'Creepster', cursive;
+    color: #e50000; /* Vermelho sangue para títulos */
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para dar profundidade */
+}
+
+h1 {
+    font-size: 3.5em; /* Tamanho maior para o título principal */
+    letter-spacing: 3px;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-top: 40px;
+    border-bottom: 2px solid #550000;
+    padding-bottom: 10px;
+    display: inline-block; /* Para o border-bottom se ajustar ao texto */
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    display: block; /* Para centralizar o block inline */
+}
+
+header {
+    background-color: #0d0d0d;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    border-bottom: 3px solid #e50000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #a0a0a0;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    font-size: 1.1em;
+}
+
+nav ul li a:hover {
+    color: #e50000;
+    text-shadow: 0 0 10px #e50000, 0 0 20px #e50000;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #222; /* Fundo ligeiramente mais claro para o conteúdo principal */
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #2b2b2b;
+    border-radius: 8px;
+    border: 1px solid #3a3a3a;
+}
+
+/* Estilos da seção de introdução */
+#introducao {
+    text-align: center;
+}
+
+#introducao video {
+    width: 100%;
+    max-width: 800px; /* Limita o tamanho máximo do vídeo */
+    height: auto;
+    border: 2px solid #e50000;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 0 15px rgba(229, 0, 0, 0.5);
+}
+
+#introducao figcaption {
+    margin-top: 10px;
+    font-style: italic;
+    color: #ccc;
+}
+
+/* Estilos da seção de histórias assustadoras */
+#historias-assustadoras #historias-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsivo com cards de 280px */
+    gap: 25px; /* Espaço entre os cards */
+    padding: 20px 0;
+    justify-content: center;
+}
+
+.historia-card {
+    background-color: #1f1f1f;
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Para botão ir para o final */
+}
+
+.historia-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7), 0 0 20px rgba(229, 0, 0, 0.3);
+}
+
+.historia-card h3 {
+    font-family: 'Creepster', cursive;
+    color: #e50000;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.historia-card .icone-terror {
+    font-size: 3em;
+    color: #e50000;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(229, 0, 0, 0.5);
+}
+
+.historia-card .ler-mais {
+    background-color: #e50000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 15px; /* Espaçamento do texto */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.historia-card .ler-mais:hover {
+    background-color: #c00000;
+    transform: scale(1.05);
+}
+
+/* Estilos para o Modal */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed; /* Posição fixa na tela */
+    z-index: 1000; /* Acima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    overflow: auto; /* Habilita rolagem se o conteúdo for muito grande */
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente escuro */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    backdrop-filter: blur(5px); /* Efeito de desfoque no fundo */
+}
+
+.modal-content {
+    background-color: #222;
+    margin: 15% auto; /* Margem superior e inferior, auto nas laterais */
+    padding: 30px;
+    border: 1px solid #e50000;
+    border-radius: 10px;
+    width: 80%; /* Largura do modal */
+    max-width: 700px; /* Largura máxima */
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.9);
+    position: relative; /* Para posicionar o botão de fechar */
+    overflow-y: auto; /* Rolagem dentro do modal se o conteúdo for muito grande */
+    max-height: 90vh; /* Altura máxima para caber na tela */
+    animation: fadeIn 0.5s ease-out; /* Animação de entrada */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal-content h2 {
+    color: #e50000;
+    font-family: 'Creepster', cursive;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 1px solid #550000;
+    padding-bottom: 10px;
+}
+
+.modal-content p {
+    white-space: pre-wrap; /* Preserva quebras de linha e espaços do texto */
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #ddd;
+    text-align: justify;
+    max-height: 55vh; /* Altura máxima para o texto da história */
+    overflow-y: auto; /* Rolagem para o texto se for muito longo */
+    padding-right: 10px; /* Espaço para a scrollbar */
+}
+
+/* Estilo para a barra de rolagem dentro do modal-content p */
+.modal-content p::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content p::-webkit-scrollbar-track {
+    background: #333;
+    border-radius: 4px;
+}
+
+.modal-content p::-webkit-scrollbar-thumb {
+    background-color: #e50000;
+    border-radius: 4px;
+    border: 1px solid #550000;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #e50000;
+    text-decoration: none;
+}
+
+/* Estilos da seção de Contato e Contar História (formulários) */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ddd;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #333;
+    color: #eee;
+    font-size: 1em;
+    resize: vertical; /* Permite redimensionar verticalmente o textarea */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: #e50000;
+    outline: none;
+    box-shadow: 0 0 10px rgba(229, 0, 0, 0.4);
+}
+
+.submit-button {
+    background-color: #e50000;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    align-self: flex-start; /* Alinha o botão à esquerda no layout flex */
+}
+
+.submit-button:hover {
+    background-color: #c00000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.contact-info {
+    margin-top: 30px;
+    text-align: center;
+    color: #ccc;
+    font-size: 1.1em;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 15px;
+    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+}
+
+.social-links li a {
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links li a:hover {
+    color: #e50000;
+    transform: translateY(-3px);
+}
+
+.social-links li a .fab,
+.social-links li a .fas {
+    margin-right: 8px;
+    font-size: 1.5em;
+    vertical-align: middle; /* Alinha o ícone com o texto */
+}
+
+/* Estilos para o rodapé */
+footer {
+    background-color: #0d0d0d;
+    color: #a0a0a0;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 3px solid #e50000;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #e50000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ff3333;
+}
+
+/* --- Estilos para o botão de Música de Fundo --- */
+.music-control-button {
+    background-color: #333; /* Cor padrão do botão */
+    color: #eee; /* Cor do texto e ícone padrão */
+    border: 1px solid #555;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    /* Posição fixa para o botão de música */
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000; /* Garante que ele esteja acima de outros elementos */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Adicionando box-shadow à transição */
+    min-width: 180px; /* Garante que o botão tenha um tamanho mínimo */
+    display: flex; /* Para alinhar o ícone e o texto */
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Espaço entre ícone e texto */
+}
+
+.music-control-button:hover {
+    background-color: #444;
+    border-color: #777;
+}
+
+/* Estilo quando a música está TOCANDO (botão "Desligar Música de Fundo") */
+.music-control-button.music-on {
+    background-color: #28a745; /* Verde vibrante */
+    border-color: #218838;
+    color: #fff;
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.6); /* Sombra verde */
+}
+
+/* Estilo quando a música está PAUSADA (botão "Ligar Música de Fundo") */
+.music-control-button.music-off {
+    background-color: #dc3545; /* Vermelho para indicar que está desligado */
+    border-color: #c82333;
+    color: #fff;
+    box-shadow: 0 0 8px rgba(220, 53, 69, 0.6); /* Sombra vermelha */
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas menores que 768px (tablets e celulares) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.8em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    .historia-card {
+        padding: 15px;
+    }
+
+    .historia-card h3 {
+        font-size: 1.5em;
+    }
+
+    .historia-card .icone-terror {
+        font-size: 2.5em;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .modal-content h2 {
+        font-size: 1.8em;
+    }
+
+    .modal-content p {
+        font-size: 1em;
+    }
+
+    .close-button {
+        font-size: 30px;
+        top: 10px;
+        right: 15px;
+    }
+
+    .social-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Ajuste para o botão de música em telas menores */
+    .music-control-button {
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%); /* Centraliza horizontalmente */
+        width: calc(100% - 40px); /* Ocupa a largura total com margem */
+        max-width: 250px; /* Limite de largura para não ficar muito grande */
+        font-size: 0.9em;
+        padding: 8px 12px;
+    }
+}
+
+/* Telas muito pequenas (celulares) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    nav ul li a {
+        font-size: 1em;
+    }
+
+    .historia-card {
+        padding: 10px;
+    }
+
+    .historia-card h3 {
+        font-size: 1.3em;
+    }
+
+    .historia-card .icone-terror {
+        font-size: 2em;
+    }
+
+    .submit-button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+}
